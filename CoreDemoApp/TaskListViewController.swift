@@ -10,9 +10,9 @@ import CoreData
 
 class TaskListViewController: UITableViewController {
     
-    private var taskList: [Task] = []
     private let cellID = "task"
-    private var switchAlertConfig = true
+    private var taskList: [Task] = []
+    private var taskAlertConfig = true
     private let storageManager = StorageManager.shared
     
     override func viewDidLoad() {
@@ -50,8 +50,8 @@ class TaskListViewController: UITableViewController {
     }
     
     @objc private func addNewTask() {
-        switchAlertConfig = true
-        showAlert(with: "New Task", and: "What do you want to do?", andTextField: "")
+        taskAlertConfig = true
+        showAlert(with: "Новая заметка", and: "Что ты хочешь сделать?", andTextField: "")
     }
     
     private func fetchData() {
@@ -65,9 +65,9 @@ class TaskListViewController: UITableViewController {
     
     private func showAlert(with title: String, and message: String, andTextField text: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+        let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
             guard let task = alert.textFields?.first?.text, !task.isEmpty else { return }
-            if self.switchAlertConfig {
+            if self.taskAlertConfig {
                 self.save(task)
             } else {
                 guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
@@ -75,7 +75,7 @@ class TaskListViewController: UITableViewController {
             }
             
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Отменить", style: .destructive)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         alert.addTextField { textField in
@@ -120,7 +120,7 @@ extension TaskListViewController {
     // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let text = taskList[indexPath.row].title else { return }
-        switchAlertConfig = false
+        taskAlertConfig = false
         showAlert(with: "Update Task", and: "What do you want to do?", andTextField: text)
     }
     
