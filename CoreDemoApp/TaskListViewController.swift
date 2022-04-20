@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 
-protocol TaskViewControllerDelegate {
-    func reloadData()
-}
-
 class TaskListViewController: UITableViewController {
     
     private let viewContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -54,9 +50,7 @@ class TaskListViewController: UITableViewController {
     }
     
     @objc private func addNewTask() {
-        let taskVC = TaskViewController()
-        taskVC.delegate = self
-        present(taskVC, animated: true)
+        showAlert(with: "New Task", and: "What do you want to do?")
     }
     
     private func fetchData() {
@@ -67,6 +61,7 @@ class TaskListViewController: UITableViewController {
             print(error.localizedDescription)
         }
     }
+    
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
@@ -81,18 +76,25 @@ class TaskListViewController: UITableViewController {
         }
         present(alert, animated: true)
     }
+    
     private func save(_ taskName: String) {
+        let task = Task(context: viewContext)
+        task.title = taskName
+        taskList.append(task)
         
+        let cellIndex = IndexPath(row: taskList.count - 1, section: 0)
+        tableView.insertRows(at: [cellIndex], with: .automatic)
+        
+        if viewContext.hasChanges {
+            do {
+                try viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
-
-extension TaskListViewController: TaskViewControllerDelegate {
-    func reloadData() {
-        fetchData()
-        tableView.reloadData()
-    }
-}
-
+// MARK: - UITableViewDataSource
 extension TaskListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskList.count
@@ -107,4 +109,22 @@ extension TaskListViewController {
         return cell
     }
 }
-//last code
+// MARK: - UITableViewDelegate
+// Delete task
+extension TaskListViewController {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+                if editingStyle == .delete {
+                    taskList.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+       }
+    }
+}
+
+extension TaskListViewController {
+    // Edit task
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        }
+    }
+

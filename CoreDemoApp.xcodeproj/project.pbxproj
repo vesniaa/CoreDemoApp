@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		8CF482AF280EEE6E0018D8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */; };
 		8CF482B1280EEE6E0018D8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */; };
-		8CF482B3280EEE6E0018D8A2 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482B2280EEE6E0018D8A2 /* TaskViewController.swift */; };
 		8CF482B9280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482B7280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld */; };
 		8CF482BB280EEE700018D8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF482BA280EEE700018D8A2 /* Assets.xcassets */; };
 		8CF482BE280EEE700018D8A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF482BC280EEE700018D8A2 /* LaunchScreen.storyboard */; };
 		8CF482C8280F50C60018D8A2 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482C7280F50C60018D8A2 /* TaskListViewController.swift */; };
+		8CF482CE28101C4E0018D8A2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482CD28101C4E0018D8A2 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8CF482AB280EEE6E0018D8A2 /* CoreDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CF482B2280EEE6E0018D8A2 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		8CF482B8280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		8CF482BA280EEE700018D8A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF482BD280EEE700018D8A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CF482BF280EEE700018D8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CF482C7280F50C60018D8A2 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		8CF482CD28101C4E0018D8A2 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */,
 				8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */,
-				8CF482B2280EEE6E0018D8A2 /* TaskViewController.swift */,
 				8CF482C7280F50C60018D8A2 /* TaskListViewController.swift */,
+				8CF482CD28101C4E0018D8A2 /* StorageManager.swift */,
 				8CF482BA280EEE700018D8A2 /* Assets.xcassets */,
 				8CF482BC280EEE700018D8A2 /* LaunchScreen.storyboard */,
 				8CF482BF280EEE700018D8A2 /* Info.plist */,
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF482B3280EEE6E0018D8A2 /* TaskViewController.swift in Sources */,
 				8CF482AF280EEE6E0018D8A2 /* AppDelegate.swift in Sources */,
 				8CF482B1280EEE6E0018D8A2 /* SceneDelegate.swift in Sources */,
+				8CF482CE28101C4E0018D8A2 /* StorageManager.swift in Sources */,
 				8CF482B9280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld in Sources */,
 				8CF482C8280F50C60018D8A2 /* TaskListViewController.swift in Sources */,
 			);
