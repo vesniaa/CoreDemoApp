@@ -109,9 +109,18 @@ extension TaskListViewController {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
+extension TaskListViewController {
+    // Edit task
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    
+    }
+    
 // MARK: - UITableViewDelegate
 // Delete task
-extension TaskListViewController {
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
                 if editingStyle == .delete {
                     taskList.remove(at: indexPath.row)
@@ -119,12 +128,4 @@ extension TaskListViewController {
        }
     }
 }
-
-extension TaskListViewController {
-    // Edit task
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        }
-    }
 

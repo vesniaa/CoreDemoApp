@@ -8,7 +8,7 @@
 import CoreData
 
 class StorageManager {
-    static let share = StorageManager()
+    static let shared = StorageManager()
     
     private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreDataManager")
@@ -19,7 +19,28 @@ class StorageManager {
         })
         return container
     }()
+    
+    private let viewContext: NSManagedObjectContext
+        
+        private init() {
+            viewContext = persistentContainer.viewContext
+        }
+
+        func fetchData(completion: (Result<[Task], Error>) -> Void) {
+            let fetchRequest = Task.fetchRequest()
+            
+            do {
+                let tasks = try viewContext.fetch(fetchRequest)
+                completion(.success(tasks))
+            } catch let error {
+                completion(.failure(error))
+            }
+        }
 }
+        
+
+
+
 
 
 
