@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C70BFC32812D45500E5D6D4 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C70BFC22812D45500E5D6D4 /* AlertController.swift */; };
 		8CF482AF280EEE6E0018D8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */; };
 		8CF482B1280EEE6E0018D8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */; };
 		8CF482B9280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CF482B7280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C70BFC22812D45500E5D6D4 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		8CF482AB280EEE6E0018D8A2 /* CoreDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				8CF482AE280EEE6E0018D8A2 /* AppDelegate.swift */,
 				8CF482B0280EEE6E0018D8A2 /* SceneDelegate.swift */,
 				8CF482C7280F50C60018D8A2 /* TaskListViewController.swift */,
+				8C70BFC22812D45500E5D6D4 /* AlertController.swift */,
 				8CF482CD28101C4E0018D8A2 /* StorageManager.swift */,
 				8CF482BA280EEE700018D8A2 /* Assets.xcassets */,
 				8CF482BC280EEE700018D8A2 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				8CF482B1280EEE6E0018D8A2 /* SceneDelegate.swift in Sources */,
 				8CF482CE28101C4E0018D8A2 /* StorageManager.swift in Sources */,
 				8CF482B9280EEE6E0018D8A2 /* CoreDemoApp.xcdatamodeld in Sources */,
+				8C70BFC32812D45500E5D6D4 /* AlertController.swift in Sources */,
 				8CF482C8280F50C60018D8A2 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
